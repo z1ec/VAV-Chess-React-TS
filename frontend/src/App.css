@@ -1,0 +1,140 @@
+.app {
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  gap: 10px;
+  padding: 20px;
+  background:
+    radial-gradient(circle at 20% 20%, rgb(255 209 148 / 40%), transparent 38%),
+    radial-gradient(circle at 80% 0%, rgb(255 140 97 / 35%), transparent 42%),
+    linear-gradient(140deg, #5e2d1d 0%, #8a3c24 35%, #b5582f 65%, #6a2f20 100%);
+  color: #fff6ea;
+}
+
+h1 {
+  margin: 0px;
+}
+
+.status-box {
+  border: 2px solid black;
+  border-radius: 15px;
+  padding: 20px
+}
+
+.status {
+  margin: 0;
+  font-size: 18px;
+  text-shadow: 0 1px 3px rgb(0 0 0 / 45%);
+}
+
+.board {
+  width: min(92vw, 520px);
+  aspect-ratio: 1;
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  grid-template-rows: repeat(8, 1fr);
+  border: 2px solid #1f1f1f;
+  box-shadow: 0 12px 28px rgb(0 0 0 / 35%);
+}
+
+.cell {
+  border: 0;
+  margin: 0;
+  padding: 0;
+  position: relative;
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+  font-size: clamp(24px, 4vw, 40px);
+  line-height: 1;
+}
+
+.cell.light {
+  background: #f0d9b5;
+}
+
+.cell.dark {
+  background: #b58863;
+}
+
+.cell.selected {
+  box-shadow: inset 0 0 0 4px #ffb300;
+}
+
+.dot {
+  width: 24%;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: #146b32;
+  opacity: 0.85;
+  position: absolute;
+}
+
+.capture-ring {
+  position: absolute;
+  inset: 8%;
+  border-radius: 50%;
+  border: 4px solid #b20f0f;
+  box-sizing: border-box;
+}
+
+.piece {
+  position: relative;
+  z-index: 1;
+}
+
+.piece.white {
+  color: #fff;
+  text-shadow: 0 0 2px #000;
+}
+
+.piece.black {
+  color: #111;
+}
+
+.reset {
+  border: 1px solid #333;
+  border-radius: 15px;
+  background: black;
+  color: white;
+  padding: 8px 14px;
+  font-size: 28px;
+  cursor: pointer;
+}
+
+.promotion-modal {
+  position: fixed;
+  inset: 0;
+  background: rgb(0 0 0 / 45%);
+  display: grid;
+  place-items: center;
+  z-index: 1000;
+}
+
+.promotion-text {
+  color: black
+}
+
+.promotion-card {
+  background: #fff;
+  border: 1px solid #222;
+  padding: 16px;
+  min-width: 300px;
+}
+
+.promotion-card p {
+  margin: 0 0 12px;
+}
+
+.promotion-actions {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 8px;
+}
+
+.promotion-actions button {
+  border: 1px solid #333;
+  background: #f7f7f7;
+  padding: 10px 8px;
+  cursor: pointer;
+}
